@@ -14,8 +14,15 @@ app.get("/slack/",function(req,res){
 	var reg=/^(\d+)\s([A-Z]+)\sto\s([A-Z]+)$/;
 
 
+
+	//fCoyCZ2Ey7iqkjpL90o2zLWS
+
 	if(req.query && req.query["text"])
 	{
+		if(req.query.token!="fCoyCZ2Ey7iqkjpL90o2zLWS") res.status(200).send("bad token");
+
+
+
 		var text=req.query["text"];
 		result = text.match(reg);
 		if(result){
