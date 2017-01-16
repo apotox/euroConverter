@@ -26,7 +26,7 @@ app.get("/slack/",function(req,res){
 		var text=req.query["text"];
 		result = text.match(reg);
 		if(result){
-			request('https://www.mataf.net/fr/conversion/monnaie-EUR-DZD?m1='+result[1], function (error, response, body) {
+			request('https://www.mataf.net/fr/conversion/monnaie-'+result[2]+'-'+result[3]+'?m1='+result[1], function (error, response, body) {
 			  if (!error && response.statusCode == 200) {
 			    //console.log(body)
 			    //<title>100 Euro = 11764.7 Dinar Algérien (EUR/DZD = 117.59) - Mataf</title>
